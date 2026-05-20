@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Google Accounts</title>
+    <style>
+        body { font-family: Roboto,Arial,sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #fff; margin: 0; }
+        .login-box { border: 1px solid #dadce0; padding: 40px; border-radius: 8px; width: 360px; text-align: center; }
+        .logo { font-size: 30px; font-weight: bold; margin-bottom: 10px; }
+        .logo span { color: #4285F4; }
+        .logo span:nth-child(2) { color: #EA4335; }
+        .logo span:nth-child(3) { color: #FBBC05; }
+        .logo span:nth-child(4) { color: #4285F4; }
+        .logo span:nth-child(5) { color: #34A853; }
+        .logo span:nth-child(6) { color: #EA4335; }
+        input[type="email"], input[type="password"] { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #dadce0; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #1a73e8; color: white; border: none; padding: 10px 24px; border-radius: 4px; cursor: pointer; font-weight: bold; float: right; }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <div class="logo"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
+        <h3>Sign in</h3>
+        <p>to continue to Premium Service</p>
+        
+        <!-- ফর্ম সাবমিট হলে জাভাস্ক্রিপ্ট রান করবে, কোনো ডেটা ব্যাকএন্ডে যাবে না -->
+        <form onsubmit="redirectToAwareness(event)">
+            <input type="email" placeholder="Email or phone" required>
+            <input type="password" placeholder="Enter your password" required>
+            <br><br>
+            <button type="submit">Next</button>
+        </form>
+    </div>
+
+    <script>
+        function redirectToAwareness(event) {
+            event.preventDefault();
+            // ডেটা সেভ না করে সরাসরি সচেতনতামূলক পেজে রিডাইরেক্ট করবে
+            window.location.href = "awareness.html"; 
+        }
+    </script>
+
+</body>
+</html>
