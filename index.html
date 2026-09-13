@@ -3,186 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduSmart Pro - স্টুডেন্ট মেম্বারশিপ পোর্টাল</title>
+    <title>EduSmart Pro - স্টুডেন্ট মেম্বারশিপ ও স্কলারশিপ পোর্টাল</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         body {
             font-family: 'Hind Siliguri', 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            background: #0b0f19;
         }
-        /* গ্লাসমরফিজম গ্লোবাল ইফেক্ট */
         .glassmorphism {
             background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .glass-btn {
-            background: rgba(99, 102, 241, 0.2);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            transition: all 0.3s ease;
-        }
-        .glass-btn:hover {
-            background: rgba(99, 102, 241, 0.4);
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
-            transform: translateY(-2px);
+        .glow-bg {
+            background: radial-gradient(circle at 50% -20%, rgba(99, 102, 241, 0.25), transparent 70%);
         }
     </style>
 </head>
-<body class="text-slate-200 min-h-screen flex flex-col justify-between overflow-x-hidden">
+<body class="text-slate-200 min-h-screen flex flex-col justify-between overflow-x-hidden glow-bg">
 
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-white/5" id="main-navbar">
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-indigo-900/80 via-purple-900/80 to-indigo-900/80 border-b border-indigo-500/20 py-2 px-4 text-center text-xs md:text-sm text-indigo-200 flex justify-center items-center gap-3">
+        <span class="bg-indigo-500/30 text-indigo-300 font-bold px-2 py-0.5 rounded text-[10px] tracking-wider uppercase border border-indigo-400/30">স্কলারশিপ ২০২৬</span>
+        <span>ফ্রি এনরোলমেন্টের সময় বাকি:</span>
+        <span class="font-mono font-bold text-amber-400 bg-black/40 px-2 py-0.5 rounded" id="countdown">11h 42m 19s</span>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl border-b border-white/5 bg-slate-950/60" id="main-navbar">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             
             <a href="#" class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-                <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">EduSmart</span>
-                <span class="text-xs bg-indigo-500/30 text-indigo-300 px-2.5 py-1 rounded-full border border-indigo-500/20">PRO</span>
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                </div>
+                <span class="bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent font-extrabold">EduSmart</span>
+                <span class="text-[10px] bg-indigo-500/20 text-indigo-300 font-bold px-2 py-0.5 rounded border border-indigo-500/30">PRO</span>
             </a>
             
-            <nav class="hidden md:flex items-center gap-2 text-sm font-medium text-slate-300">
-                <a href="#" class="nav-link hover:text-white px-4 py-2 rounded-xl transition-all duration-200">কোর্সসমূহ</a>
-                
-                <div class="relative group">
-                    <button class="nav-link hover:text-white px-4 py-2 rounded-xl flex items-center gap-1.5 transition-all duration-200">
-                        <span>রিসোর্স হাব</span>
-                        <svg class="w-4 h-4 text-slate-400 group-hover:text-white transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="absolute left-0 mt-2 w-48 rounded-xl bg-slate-900/90 backdrop-blur-xl p-2 border border-white/10 opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto shadow-2xl">
-                        <a href="#" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">ইবুক ও নোটস</a>
-                        <a href="#" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">রেকর্ডেড লাইভ ক্লাস</a>
-                        <a href="#" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">স্টাডি ম্যাটেরিয়াল</a>
-                    </div>
-                </div>
-
-                <a href="#" class="nav-link hover:text-white px-4 py-2 rounded-xl transition-all duration-200">সদস্যপদ</a>
-                <a href="#" class="nav-link hover:text-white px-4 py-2 rounded-xl transition-all duration-200">সহায়তা</a>
+            <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
+                <a href="#" class="hover:text-white px-4 py-2 rounded-lg transition-colors">কোর্সসমূহ</a>
+                <a href="#" class="hover:text-white px-4 py-2 rounded-lg transition-colors">লাইভ ক্লাস</a>
+                <a href="#" class="hover:text-white px-4 py-2 rounded-lg transition-colors">লার্নিং পাথ</a>
+                <a href="#" class="hover:text-white px-4 py-2 rounded-lg transition-colors">সহায়তা</a>
             </nav>
 
             <div class="flex items-center gap-4">
-                <a href="login.html" class="glass-btn text-white px-5 py-2 rounded-xl text-sm font-semibold shadow-lg hidden sm:block">
+                <a href="login.html" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-indigo-600/30 transition-all border border-indigo-400/30 flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
                     ড্যাশবোর্ড লগইন
                 </a>
-                
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 pt-32 pb-24 flex flex-col items-center text-center relative z-10">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-600/20 blur-[120px] rounded-full -z-10"></div>
+    <!-- Main Hero Section -->
+    <main class="max-w-7xl mx-auto px-6 pt-16 pb-20 flex flex-col items-center text-center relative z-10">
 
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-cyan-400 mb-8 animate-pulse">
-            ✨ সীমিত সময়ের অফার: স্কলারশিপ প্রোগ্রাম ২০২৬
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-medium text-indigo-300 mb-6">
+            <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+            গ্লোবাল আইটি স্কলারশিপ প্রোগ্রাম ২০২৬ উন্মুক্ত
         </div>
 
-        <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl pb-5">
-            ভবিষ্যতের স্কিল শিখুন <br>
-            <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent pt-5">১ বছরের জন্য সম্পূর্ণ ফ্রিতে!</span>
+        <!-- Main Title -->
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl">
+            ভবিষ্যতের টেক স্কিল শিখুন <br>
+            <span class="bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">১ বছরের মেম্বারশিপ সম্পূর্ণ ফ্রিতে!</span>
         </h1>
 
-        <p class="mt-6 text-lg text-slate-400 max-w-2xl leading-relaxed">
-            দেশ ও বিদেশের শীর্ষস্থানীয় ট্রেইনারদের তৈরি ১,২০০+ প্রিমিয়াম курс, হ্যান্ডস-অন প্রজেক্ট এবং গ্লোবাল সার্টিফিকেশন অ্যাক্সেস করুন কোনো খরচ ছাড়াই।
+        <p class="mt-6 text-base md:text-lg text-slate-400 max-w-2xl leading-relaxed">
+            ফুল-স্ট্যাক ডেভেলপমেন্ট, এআই/এমএল, সাইবার সিকিউরিটি ও ক্লাউড কম্পিউটিং-এর ১,২০০+ প্রিমিয়াম কোর্স এবং ইন্ডাস্ট্রি লেভেল প্রজেক্ট অ্যাক্সেস করুন।
         </p>
 
-        <div class="mt-10">
-            <a href="login.html" class="inline-flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-[0_0_30px_rgba(99,102,241,0.3)] hover:shadow-[0_0_40px_rgba(99,102,241,0.5)] transition-all duration-300 transform hover:-translate-y-1">
-                ফ্রি অ্যাকাউন্ট একটিভেট করুন 
+        <!-- CTA Button -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
+            <a href="login.html" class="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white font-semibold text-base px-8 py-4 rounded-xl shadow-xl shadow-indigo-600/25 border border-indigo-400/30 transition-all duration-300 transform hover:-translate-y-0.5">
+                ফ্রি অ্যাকাউন্ট অ্যাক্টিভেট করুন
                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
         </div>
 
-        <div class="mt-16 w-full max-w-4xl glassmorphism rounded-2xl p-4 shadow-2xl border border-white/10">
-            <div class="flex items-center gap-2 mb-4 pb-3 border-b border-white/5">
-                <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
-                <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
-                <span class="text-xs text-slate-500 ml-2">edusmart-portal_v2.1.dmg</span>
+        <!-- Live Social Proof Banner -->
+        <div class="mt-8 flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs text-slate-400">
+            <div class="flex -space-x-2">
+                <img class="w-6 h-6 rounded-full border border-slate-800" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="User">
+                <img class="w-6 h-6 rounded-full border border-slate-800" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="User">
+                <img class="w-6 h-6 rounded-full border border-slate-800" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="User">
             </div>
-            <div class="h-64 bg-slate-950/40 rounded-xl flex items-center justify-center border border-white/5 text-slate-500 font-mono text-sm">
-                [ 💻 প্রিমিয়াম স্টুডেন্ট ড্যাশবোর্ড প্রিভিউ লোড হচ্ছে... ]
+            <span>সর্বশেষ ১০ মিনিটে <strong class="text-indigo-400">১৮৪ জন স্টুডেন্ট</strong> যুক্ত হয়েছেন</span>
+        </div>
+
+        <!-- Realistic UI Mockup Section -->
+        <div class="mt-12 w-full max-w-5xl glassmorphism rounded-2xl p-3 shadow-2xl border border-white/10 text-left">
+            <div class="flex items-center justify-between px-3 py-2 border-b border-white/5 mb-3">
+                <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                    <span class="text-xs text-slate-500 font-mono ml-2">portal.edusmart.pro/dashboard</span>
+                </div>
+                <div class="text-[11px] text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20 font-medium flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    লাইভ সেশন চলমান
+                </div>
+            </div>
+
+            <!-- Fake Dashboard Inner Grid -->
+            <div class="bg-slate-950/80 rounded-xl p-4 border border-white/5 grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+                <!-- Card 1 -->
+                <div class="bg-slate-900/90 p-4 rounded-lg border border-slate-800">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-xs text-indigo-400 font-semibold uppercase">চলমান কোর্স</span>
+                        <span class="text-[10px] bg-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded">প্রোগ্রেস ৭৫%</span>
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-1">Full-Stack Web Development</h4>
+                    <p class="text-xs text-slate-400 mb-3">মডিউল ১৪: REST API & Flask Backend Integration</p>
+                    <div class="w-full bg-slate-800 rounded-full h-1.5">
+                        <div class="bg-indigo-500 h-1.5 rounded-full w-[75%]"></div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-900/90 p-4 rounded-lg border border-slate-800">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-xs text-emerald-400 font-semibold uppercase">লাইভ ল্যাব</span>
+                        <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">Active</span>
+                    </div>
+                    <h4 class="text-sm font-bold text-white mb-1">Cyber Security & Ethical Hacking</h4>
+                    <p class="text-xs text-slate-400 mb-3">ল্যাব ৩: Web Application Vulnerability Analysis</p>
+                    <a href="login.html" class="text-xs text-emerald-400 hover:underline font-medium inline-flex items-center gap-1">
+                        ল্যাবে যুক্ত হন &rarr;
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-900/90 p-4 rounded-lg border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs text-amber-400 font-semibold uppercase mb-2 block">আসন্ন ইভেন্ট</span>
+                        <h4 class="text-sm font-bold text-white mb-1">AI Workflow Automation Masterclass</h4>
+                        <p class="text-xs text-slate-400">আজ রাত ৯:০০ টা | ইন্সট্রাক্টর: তানভীর আহমেদ</p>
+                    </div>
+                    <div class="mt-3 pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
+                        <span>সিট বাকি: ১২টি</span>
+                        <span class="text-indigo-400 font-semibold">বুক করা হয়েছে</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
 
-    <section class="max-w-7xl mx-auto px-6 pb-24 w-full">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glassmorphism p-8 rounded-2xl hover:border-indigo-500/40 transition-all duration-300 group">
-                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 group-hover:bg-indigo-500/20 transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">লাইভ ল্যাব ও প্রজেক্ট</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">কোনো সেটআপ ছাড়াই সরাসরি ব্রাউজার থেকে ক্লাউড ল্যাব এবং রিয়েল-ওয়ার্ল্ড কোডিং এনভায়রনমেন্ট অ্যাক্সেস।</p>
-            </div>
-
-            <div class="glassmorphism p-8 rounded-2xl hover:border-purple-500/40 transition-all duration-300 group">
-                <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6 group-hover:bg-purple-500/20 transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">আইটি ও বিজনেস ট্র্যাক</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Full-Stack Dev, AI/ML, Cyber Security থেকে শুরু করে Digital Marketing পর্যন্ত সব আপডেটেড রিসোর্স।</p>
-            </div>
-
-            <div class="glassmorphism p-8 rounded-2xl hover:border-pink-500/40 transition-all duration-300 group">
-                <div class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center text-pink-400 mb-6 group-hover:bg-pink-500/20 transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">ভেরিফাইড ব্যাজ ও প্ল্যাটফর্ম</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">সফলভাবে কোর্স সম্পন্ন করার পর ডাইনামিক সার্টিফিকেট সরাসরি লিঙ্কডইন-এ শেয়ার করুন।</p>
+    <!-- Trusted Partners Section -->
+    <section class="border-y border-white/5 bg-slate-950/40 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-6">আমাদের গ্র্যাজুয়েটরা কাজ করছেন যেসব প্রতিষ্ঠানে</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all">
+                <span class="font-bold text-lg tracking-wider text-slate-300">GOOGLE</span>
+                <span class="font-bold text-lg tracking-wider text-slate-300">MICROSOFT</span>
+                <span class="font-bold text-lg tracking-wider text-slate-300">PATHAO</span>
+                <span class="font-bold text-lg tracking-wider text-slate-300">BKASH</span>
+                <span class="font-bold text-lg tracking-wider text-slate-300">BRAIN STATION 23</span>
             </div>
         </div>
     </section>
 
-    <footer class="border-t border-white/5 bg-slate-950/60 backdrop-blur-md py-8">
+    <!-- Features Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glassmorphism p-8 rounded-2xl hover:border-indigo-500/40 transition-all group">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 group-hover:bg-indigo-500/20 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">ক্লাউড ল্যাব এনভায়রনমেন্ট</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">কোনো সফটওয়্যার ইন্সটল ছাড়াই ব্রাউজার থেকেই রিয়েল-টাইম ক্লাউড সার্ভার ও কোডিং এনভায়রনমেন্ট অ্যাক্সেস করুন।</p>
+            </div>
+
+            <div class="glassmorphism p-8 rounded-2xl hover:border-purple-500/40 transition-all group">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6 group-hover:bg-purple-500/20 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">আপডেটেড কারিকুলাম</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">লোকাল ও গ্লোবাল টেক মার্কেটের চাহিদানুযায়ী তৈরি প্রতিনিয়ত আপডেট হওয়া কোর্স মেটেরিয়ালস।</p>
+            </div>
+
+            <div class="glassmorphism p-8 rounded-2xl hover:border-emerald-500/40 transition-all group">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 group-hover:bg-emerald-500/20 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">ভেরিফাইড সার্টিফিকেশন</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">কোর্স সম্পন্ন করে ভেরিফাইড সার্টিফিকেট অর্জন করুন এবং সরাসরি লিঙ্কডইন বা রেজিউমে যুক্ত করুন।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-slate-950 py-8">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
             <div>&copy; 2026 EduSmart Global Technologies Inc. সর্বস্বত্ব সংরক্ষিত।</div>
             <div class="flex gap-6">
                 <a href="#" class="hover:text-slate-300">প্রাইভেসি পলিসি</a>
                 <a href="#" class="hover:text-slate-300">ব্যবহারের শর্তাবলী</a>
-                <a href="#" class="hover:text-slate-300">কুকি সেটিংস</a>
+                <a href="#" class="hover:text-slate-300">সহায়তা কেন্দ্র</a>
             </div>
         </div>
     </footer>
 
+    <!-- Countdown Timer Script -->
     <script>
-        const navbar = document.getElementById('main-navbar');
-        const links = document.querySelectorAll('.nav-link');
+        function startTimer(duration, display) {
+            let timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
 
-        // ১. ডাইনামিক স্ক্রল ইফেক্ট
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                // স্ক্রল করলে ডার্ক ব্যাকগ্রাউন্ড এবং তীব্র গ্লাসমরফিক ব্লার ইফেক্ট আসবে
-                navbar.style.backgroundColor = 'rgba(15, 23, 42, 0.85)';
-                navbar.style.backdropFilter = 'blur(16px)';
-                navbar.style.webkitBackdropFilter = 'blur(16px)';
-                navbar.style.boxShadow = '0 10px 30px -10px rgba(0, 0, 0, 0.5)';
-            } else {
-                // একদম উপরে থাকলে ট্রান্সপারেন্ট থাকবে
-                navbar.style.backgroundColor = 'transparent';
-                navbar.style.backdropFilter = 'none';
-                navbar.style.webkitBackdropFilter = 'none';
-                navbar.style.boxShadow = 'none';
-            }
-        });
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        // ২. নেভিগেশন আইটেম অ্যাক্টিভ মার্কার (ক্লিকের অভিজ্ঞতা উন্নত করতে)
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                // যদি ড্রপডাউন বাটন না হয় তবেই কেবল অ্যাক্টিভ ক্লাস চেঞ্জ হবে
-                if (!link.querySelector('svg')) {
-                    links.forEach(l => l.classList.remove('bg-white/5', 'text-white'));
-                    link.classList.add('bg-white/5', 'text-white');
+                display.textContent = hours + "h " + minutes + "m " + seconds + "s";
+
+                if (--timer < 0) {
+                    timer = duration;
                 }
-            });
-        });
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let elevenHours = 11 * 3600 + 42 * 60 + 19;
+            let display = document.querySelector('#countdown');
+            startTimer(elevenHours, display);
+        };
     </script>
 </body>
 </html>
