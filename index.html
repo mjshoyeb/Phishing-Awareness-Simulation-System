@@ -14,38 +14,36 @@
     <style>
         body {
             font-family: 'Hind Siliguri', 'Inter', sans-serif;
-            background: #0b0f19;
+            background-color: #0b0f19 !important;
+            color: #f1f5f9;
         }
         .glassmorphism {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(15, 23, 42, 0.75);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .glow-bg {
-            background: radial-gradient(circle at 50% -20%, rgba(99, 102, 241, 0.25), transparent 70%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
-<body class="text-slate-200 min-h-screen flex flex-col justify-between overflow-x-hidden glow-bg">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between overflow-x-hidden">
 
     <!-- Top Announcement Bar -->
-    <div class="bg-gradient-to-r from-indigo-900/80 via-purple-900/80 to-indigo-900/80 border-b border-indigo-500/20 py-2 px-4 text-center text-xs md:text-sm text-indigo-200 flex justify-center items-center gap-3">
+    <div class="bg-indigo-950 border-b border-indigo-500/20 py-2.5 px-4 text-center text-xs md:text-sm text-indigo-200 flex justify-center items-center gap-3">
         <span class="bg-indigo-500/30 text-indigo-300 font-bold px-2 py-0.5 rounded text-[10px] tracking-wider uppercase border border-indigo-400/30">স্কলারশিপ ২০২৬</span>
         <span>ফ্রি এনরোলমেন্টের সময় বাকি:</span>
-        <span class="font-mono font-bold text-amber-400 bg-black/40 px-2 py-0.5 rounded" id="countdown">11h 42m 19s</span>
+        <span class="font-mono font-bold text-amber-400 bg-black/60 px-2 py-0.5 rounded" id="countdown">11h 42m 19s</span>
     </div>
 
     <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 backdrop-blur-xl border-b border-white/5 bg-slate-950/60" id="main-navbar">
+    <header class="sticky top-0 z-50 backdrop-blur-xl border-b border-white/10 bg-slate-900/90" id="main-navbar">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             
             <a href="#" class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                <div class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-500/30">
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
                 </div>
-                <span class="bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent font-extrabold">EduSmart</span>
-                <span class="text-[10px] bg-indigo-500/20 text-indigo-300 font-bold px-2 py-0.5 rounded border border-indigo-500/30">PRO</span>
+                <span class="text-white font-extrabold">EduSmart</span>
+                <span class="text-[10px] bg-indigo-500/30 text-indigo-300 font-bold px-2 py-0.5 rounded border border-indigo-500/40">PRO</span>
             </a>
             
             <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-300">
@@ -68,62 +66,59 @@
     <main class="max-w-7xl mx-auto px-6 pt-16 pb-20 flex flex-col items-center text-center relative z-10">
 
         <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-medium text-indigo-300 mb-6">
-            <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-900/60 border border-indigo-500/40 text-xs font-medium text-indigo-300 mb-6">
+            <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
             গ্লোবাল আইটি স্কলারশিপ প্রোগ্রাম ২০২৬ উন্মুক্ত
         </div>
 
         <!-- Main Title -->
         <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl">
             ভবিষ্যতের টেক স্কিল শিখুন <br>
-            <span class="bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">১ বছরের মেম্বারশিপ সম্পূর্ণ ফ্রিতে!</span>
+            <span class="text-cyan-400">১ বছরের মেম্বারশিপ সম্পূর্ণ ফ্রিতে!</span>
         </h1>
 
-        <p class="mt-6 text-base md:text-lg text-slate-400 max-w-2xl leading-relaxed">
+        <p class="mt-6 text-base md:text-lg text-slate-300 max-w-2xl leading-relaxed">
             ফুল-স্ট্যাক ডেভেলপমেন্ট, এআই/এমএল, সাইবার সিকিউরিটি ও ক্লাউড কম্পিউটিং-এর ১,২০০+ প্রিমিয়াম কোর্স এবং ইন্ডাস্ট্রি লেভেল প্রজেক্ট অ্যাক্সেস করুন।
         </p>
 
         <!-- CTA Button -->
         <div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
-            <a href="login.html" class="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 text-white font-semibold text-base px-8 py-4 rounded-xl shadow-xl shadow-indigo-600/25 border border-indigo-400/30 transition-all duration-300 transform hover:-translate-y-0.5">
+            <a href="login.html" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-base px-8 py-4 rounded-xl shadow-xl shadow-indigo-600/30 border border-indigo-400/40 transition-all duration-300 transform hover:-translate-y-0.5">
                 ফ্রি অ্যাকাউন্ট অ্যাক্টিভেট করুন
                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
         </div>
 
         <!-- Live Social Proof Banner -->
-        <div class="mt-8 flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs text-slate-400">
+        <div class="mt-8 flex items-center gap-3 bg-slate-900 border border-slate-800 px-4 py-2 rounded-full text-xs text-slate-300">
             <div class="flex -space-x-2">
                 <img class="w-6 h-6 rounded-full border border-slate-800" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="User">
                 <img class="w-6 h-6 rounded-full border border-slate-800" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="User">
                 <img class="w-6 h-6 rounded-full border border-slate-800" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="User">
             </div>
-            <span>সর্বশেষ ১০ মিনিটে <strong class="text-indigo-400">১৮৪ জন স্টুডেন্ট</strong> যুক্ত হয়েছেন</span>
+            <span>সর্বশেষ ১০ মিনিটে <strong class="text-cyan-400">১৮৪ জন স্টুডেন্ট</strong> যুক্ত হয়েছেন</span>
         </div>
 
-        <!-- Realistic UI Mockup Section -->
-        <div class="mt-12 w-full max-w-5xl glassmorphism rounded-2xl p-3 shadow-2xl border border-white/10 text-left">
-            <div class="flex items-center justify-between px-3 py-2 border-b border-white/5 mb-3">
+        <!-- Dashboard Preview Section -->
+        <div class="mt-12 w-full max-w-5xl glassmorphism rounded-2xl p-4 shadow-2xl border border-slate-800 text-left">
+            <div class="flex items-center justify-between px-2 py-2 border-b border-slate-800 mb-4">
                 <div class="flex items-center gap-2">
-                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                    <span class="text-xs text-slate-500 font-mono ml-2">portal.edusmart.pro/dashboard</span>
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span class="text-xs text-slate-400 font-mono ml-2">portal.edusmart.pro/dashboard</span>
                 </div>
-                <div class="text-[11px] text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20 font-medium flex items-center gap-1">
+                <div class="text-[11px] text-emerald-400 bg-emerald-950 px-2.5 py-0.5 rounded-full border border-emerald-500/30 font-medium flex items-center gap-1">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                     লাইভ সেশন চলমান
                 </div>
             </div>
 
-            <!-- Fake Dashboard Inner Grid -->
-            <div class="bg-slate-950/80 rounded-xl p-4 border border-white/5 grid grid-cols-1 md:grid-cols-3 gap-4">
-                
-                <!-- Card 1 -->
-                <div class="bg-slate-900/90 p-4 rounded-lg border border-slate-800">
+            <div class="bg-slate-950 rounded-xl p-4 border border-slate-800 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
                     <div class="flex justify-between items-start mb-3">
                         <span class="text-xs text-indigo-400 font-semibold uppercase">চলমান কোর্স</span>
-                        <span class="text-[10px] bg-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded">প্রোগ্রেস ৭৫%</span>
+                        <span class="text-[10px] bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded border border-indigo-800">৭৫% সম্পন্ন</span>
                     </div>
                     <h4 class="text-sm font-bold text-white mb-1">Full-Stack Web Development</h4>
                     <p class="text-xs text-slate-400 mb-3">মডিউল ১৪: REST API & Flask Backend Integration</p>
@@ -132,71 +127,54 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-slate-900/90 p-4 rounded-lg border border-slate-800">
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-800">
                     <div class="flex justify-between items-start mb-3">
                         <span class="text-xs text-emerald-400 font-semibold uppercase">লাইভ ল্যাব</span>
-                        <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">Active</span>
+                        <span class="text-[10px] bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-800">Active</span>
                     </div>
                     <h4 class="text-sm font-bold text-white mb-1">Cyber Security & Ethical Hacking</h4>
                     <p class="text-xs text-slate-400 mb-3">ল্যাব ৩: Web Application Vulnerability Analysis</p>
-                    <a href="login.html" class="text-xs text-emerald-400 hover:underline font-medium inline-flex items-center gap-1">
+                    <a href="login.html" class="text-xs text-cyan-400 hover:underline font-medium inline-flex items-center gap-1">
                         ল্যাবে যুক্ত হন &rarr;
                     </a>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="bg-slate-900/90 p-4 rounded-lg border border-slate-800 flex flex-col justify-between">
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-800 flex flex-col justify-between">
                     <div>
                         <span class="text-xs text-amber-400 font-semibold uppercase mb-2 block">আসন্ন ইভেন্ট</span>
                         <h4 class="text-sm font-bold text-white mb-1">AI Workflow Automation Masterclass</h4>
                         <p class="text-xs text-slate-400">আজ রাত ৯:০০ টা | ইন্সট্রাক্টর: তানভীর আহমেদ</p>
                     </div>
-                    <div class="mt-3 pt-2 border-t border-slate-800/80 flex justify-between items-center text-[11px] text-slate-400">
+                    <div class="mt-3 pt-2 border-t border-slate-800 flex justify-between items-center text-[11px] text-slate-400">
                         <span>সিট বাকি: ১২টি</span>
                         <span class="text-indigo-400 font-semibold">বুক করা হয়েছে</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </main>
 
-    <!-- Trusted Partners Section -->
-    <section class="border-y border-white/5 bg-slate-950/40 py-8">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-6">আমাদের গ্র্যাজুয়েটরা কাজ করছেন যেসব প্রতিষ্ঠানে</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all">
-                <span class="font-bold text-lg tracking-wider text-slate-300">GOOGLE</span>
-                <span class="font-bold text-lg tracking-wider text-slate-300">MICROSOFT</span>
-                <span class="font-bold text-lg tracking-wider text-slate-300">PATHAO</span>
-                <span class="font-bold text-lg tracking-wider text-slate-300">BKASH</span>
-                <span class="font-bold text-lg tracking-wider text-slate-300">BRAIN STATION 23</span>
-            </div>
-        </div>
-    </section>
-
     <!-- Features Section -->
-    <section class="max-w-7xl mx-auto px-6 py-20 w-full">
+    <section class="max-w-7xl mx-auto px-6 py-12 w-full">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glassmorphism p-8 rounded-2xl hover:border-indigo-500/40 transition-all group">
-                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6 group-hover:bg-indigo-500/20 transition-colors">
+            <div class="glassmorphism p-8 rounded-2xl hover:border-indigo-500/40 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-indigo-950 border border-indigo-800 flex items-center justify-center text-indigo-400 mb-6">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 </div>
                 <h3 class="text-xl font-bold text-white mb-3">ক্লাউড ল্যাব এনভায়রনমেন্ট</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">কোনো সফটওয়্যার ইন্সটল ছাড়াই ব্রাউজার থেকেই রিয়েল-টাইম ক্লাউড সার্ভার ও কোডিং এনভায়রনমেন্ট অ্যাক্সেস করুন।</p>
             </div>
 
-            <div class="glassmorphism p-8 rounded-2xl hover:border-purple-500/40 transition-all group">
-                <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6 group-hover:bg-purple-500/20 transition-colors">
+            <div class="glassmorphism p-8 rounded-2xl hover:border-purple-500/40 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-purple-950 border border-purple-800 flex items-center justify-center text-purple-400 mb-6">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                 </div>
                 <h3 class="text-xl font-bold text-white mb-3">আপডেটেড কারিকুলাম</h3>
                 <p class="text-slate-400 text-sm leading-relaxed">লোকাল ও গ্লোবাল টেক মার্কেটের চাহিদানুযায়ী তৈরি প্রতিনিয়ত আপডেট হওয়া কোর্স মেটেরিয়ালস।</p>
             </div>
 
-            <div class="glassmorphism p-8 rounded-2xl hover:border-emerald-500/40 transition-all group">
-                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 group-hover:bg-emerald-500/20 transition-colors">
+            <div class="glassmorphism p-8 rounded-2xl hover:border-emerald-500/40 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-emerald-950 border border-emerald-800 flex items-center justify-center text-emerald-400 mb-6">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                 </div>
                 <h3 class="text-xl font-bold text-white mb-3">ভেরিফাইড সার্টিফিকেশন</h3>
@@ -206,13 +184,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-white/5 bg-slate-950 py-8">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+    <footer class="border-t border-slate-800 bg-slate-950 py-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
             <div>&copy; 2026 EduSmart Global Technologies Inc. সর্বস্বত্ব সংরক্ষিত।</div>
             <div class="flex gap-6">
-                <a href="#" class="hover:text-slate-300">প্রাইভেসি পলিসি</a>
-                <a href="#" class="hover:text-slate-300">ব্যবহারের শর্তাবলী</a>
-                <a href="#" class="hover:text-slate-300">সহায়তা কেন্দ্র</a>
+                <a href="#" class="hover:text-slate-200">প্রাইভেসি পলিসি</a>
+                <a href="#" class="hover:text-slate-200">ব্যবহারের শর্তাবলী</a>
+                <a href="#" class="hover:text-slate-200">সহায়তা কেন্দ্র</a>
             </div>
         </div>
     </footer>
