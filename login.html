@@ -130,7 +130,8 @@
         <h1 class="heading">Sign in</h1>
         <p class="subheading">to continue to EduSmart Pro Single Sign-On</p>
 
-        <form action="/login-process" method="POST">
+        <!-- Form Handling without backend POST -->
+        <form id="loginForm">
             <div class="input-group">
                 <input type="email" name="email" class="input-field" placeholder="Email or phone" required>
             </div>
@@ -152,5 +153,11 @@
         </form>
     </div>
 
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // ডিফল্ট POST সাবমিট বন্ধ করবে
+            window.location.href = 'awareness.html'; // সরাসরি সচেতনতা পেজে নিয়ে যাবে
+        });
+    </script>
 </body>
 </html>
